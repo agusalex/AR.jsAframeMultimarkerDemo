@@ -4,25 +4,23 @@
     Multimarker Demo
   </title>
   <meta name="Multimarker Demo" >
-  <script>   
+  <script>   //Loads multimarker file to localstorage otherwise the area preset will only look for hiro alone
+  var a = window.location.toString();
+  var file = a.substring(a.indexOf("?") + 1);
       var xobj = new XMLHttpRequest();
             xobj.overrideMimeType("application/json");
-            xobj.open('GET', 'ARjsMultiMarkerFile', true); // Replace 'my_data' with the path to your file
-
+            if(file==a){
+              xobj.open('GET', 'ARjsMultiMarkerFile', true); // 
+            }
+            else{
+              xobj.open('GET', file, true); // 
+            }
           xobj.onreadystatechange = function () { 
       if (xobj.readyState == 4 && xobj.status == "200") {
-        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
         localStorage.setItem('ARjsMultiMarkerFile',xobj.responseText);
         }};
         xobj.send();
             </script>
-
-     
-        
-
-    
-
-  
   <script src="lib/aframe.min.js"></script>
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 </head>
