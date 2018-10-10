@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>
+    MuseoAR
+  </title>
+  <meta name="Multimarker Demo" >
+  <script src="lib/aframe.min.js"></script>
+  <script src="lib/aframe-ar.js"></script> 
+</head>
+
+
+<body style='margin : 0px; overflow: hidden;'>
+
+    <a-scene id="scene" embedded arjs='sourceType:webcam; debugUIEnabled: false; detectionMode: mono;' vr-mode-ui="enabled: false;">
+      <a-marker type="area">
+        <a-box color="tomato" rotation="0 -90 -70"depth="2" height="2" width="2"  ></a-box>
+      </a-marker>
+
+      <a-entity camera ></a-entity>
+      </a-scene>
+</body>
+</html>
