@@ -1,19 +1,38 @@
 <html>
 <head>
   <title>
-    MuseoAR
+    Multimarker Demo
   </title>
   <meta name="Multimarker Demo" >
+  <script>   
+      var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', 'ARjsMultiMarkerFile', true); // Replace 'my_data' with the path to your file
+
+          xobj.onreadystatechange = function () { 
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        localStorage.setItem('ARjsMultiMarkerFile',xobj.responseText);
+        }};
+        xobj.send();
+            </script>
+
+     
+        
+
+    
+
+  
   <script src="lib/aframe.min.js"></script>
-  <script src="lib/aframe-ar.js"></script> 
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 </head>
 
 
 <body style='margin : 0px; overflow: hidden;'>
 
     <a-scene id="scene" embedded arjs='sourceType:webcam; debugUIEnabled: false; detectionMode: mono;' vr-mode-ui="enabled: false;">
-      <a-marker type="area">
-        <a-box color="tomato" rotation="0 -90 -70"depth="2" height="2" width="2"  ></a-box>
+      <a-marker preset="area">
+        <a-box color="tomato" rotation="0 -90 -70"depth="2" height="2" width="2" ></a-box>
       </a-marker>
 
       <a-entity camera ></a-entity>
