@@ -22,16 +22,16 @@ When all the markers you wanted to be learned are checked green, hit pause, then
 localStorage.getItem('ARjsMultiMarkerFile');
 ```
 
-Copy its output and remember to remove the '' encompassing the file. Then create a file on the root directory of your project with any name. Then on your browser head over to [http://localhost:port?theFileNameYouUsed](http://localhost:5500/?ARjsMultiMarkerFile)
+Copy its output and remember to remove the " " encompassing the file. Then create a file on the root directory of your project with any name. Then on your browser head over to [http://localhost:port?theFileNameYouUsed](http://localhost:5500/?ARjsMultiMarkerFile)
 
 Finally, if you want to try this on mobile you'll need HTTPS instead of HTTP, for that I included bash file just execute it with 
 ```sh
-sudo sh install install-https-server.sh
+sudo sh install-https-server.sh
 ```
 
 Note the IP address that spits out and if you are on the same wifi network as your phone head over to
 ```sh
-https:localhost:8080
+https:thatIP:8080
 ```
 
     
